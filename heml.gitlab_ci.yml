@@ -1,0 +1,28 @@
+stages:
+  - package-publish
+
+async-service:
+  stage: package-publish
+  image:
+    name: alpine/helm:3.5.3
+    entrypoint: [""]
+  script:
+    - sh ./update.sh async-service ${TOKEN}
+  only:
+    refs:
+      - main
+    changes:
+      - async-service/**/*
+
+sync-service:
+  stage: package-publish
+  image:
+    name: alpine/helm:3.5.3
+    entrypoint: [""]
+  script:
+    - sh ./update.sh sync-service ${TOKEN}
+  only:
+    refs:
+      - main
+    changes:
+      - sync-service/**/*
