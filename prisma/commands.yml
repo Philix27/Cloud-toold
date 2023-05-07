@@ -1,0 +1,12 @@
+initalize:
+  - prisma init
+  - npx prisma migrate dev --name addedState
+  - sudo prisma generate
+  - prisma format
+  - prisma validate
+  - prisma studio
+existing_db:
+  - prisma db pull
+updating_db:
+  # not advised
+  - prisma db push

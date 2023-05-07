@@ -1,0 +1,14 @@
+commands:
+  - who am i # display name and current time
+  - pwd # present working directory
+  - date # date
+calender:
+  - cal # calender
+  - cal 05 2023 #month and year - cal feb 2023
+files:
+  - touch name_of_file # to create new file
+  - touch file1 file1 file1
+  - mkdir name_of_dir # make/create directory
+  - mkdir name_of_dir/inner_foler # make/create directory
+  - cat > filename # to edit and type in file - ctl D to end file
+  - cate < filename # to read file
