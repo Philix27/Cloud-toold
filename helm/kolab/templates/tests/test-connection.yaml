@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "kolab.fullname" . }}-test-connection"
+  labels:
+    {{- include "kolab.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "kolab.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
