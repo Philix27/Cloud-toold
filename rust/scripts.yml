@@ -1,0 +1,3 @@
+run_with_cargo:
+  - cargo new app_name --bin
+  - cargo run

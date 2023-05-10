@@ -1,0 +1,6 @@
+add_to_charts:
+  - install with helm first, on local
+  - helm repo add argo https://argoproj.github.io/argo-helm
+  - after that you update by running
+  - helm repo update
+  - helm search repo argocd

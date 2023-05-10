@@ -1,0 +1,14 @@
+steps:
+  - start project via a docker container
+  - easier to manage
+  - After it starts running the to execute commands you can use rabbitmqctl
+commands:
+  - docker run -d --name _rabbitmq_name_of_con -p 65672:5672 -p 15672:15672 rabbitmq:tag
+  - Open the dashboard on your browser using localhost:15672
+  - docker exec _rabbitmq_name_of_con rabbitmqctl
+  - docker exec _rabbitmq_name_of_con rabbitmqctl add_user _user_name _password
+  - docker exec _name_of_con rabbitmqctl set_user_tags _name adminstrator
+  - docker exec _name_of_con rabbitmqctl delete_user _name_of_user
+  - Create a virtual host
+  - docker exec _name_of_con rabbitmqctl add_vhost _customer
+  - docker exec _name_of_con rabbitmqctl ser_permissions _permision_syntax
